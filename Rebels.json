@@ -1,0 +1,663 @@
+{
+  "catalogue": {
+    "name": "Rebels",
+    "id": "0d6b-68a3-c90f-4514",
+    "authorContact": "mr.vitriol@web.de",
+    "authorName": "Mr Vitriol",
+    "battleScribeVersion": 2.03,
+    "gameSystemId": "2409-8f27-4979-8239",
+    "gameSystemRevision": 1,
+    "library": false,
+    "revision": 3,
+    "type": "catalogue",
+    "xmlns": "http://www.battlescribe.net/schema/catalogueSchema",
+    "entryLinks": [
+      {
+        "name": "Cyborg - Model S",
+        "id": "aa5d-28f1-4d5c-3981",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "targetId": "e2ab-88db-25d4-f886",
+        "type": "selectionEntry"
+      },
+      {"name": "Cell", "id": "2970-f9d8-83d0-d06f", "collective": false, "hidden": false, "import": true, "targetId": "5e59-75fc-ad88-0b51", "type": "selectionEntry"},
+      {
+        "name": "Rebel Hero",
+        "id": "eac1-7bd4-dc12-50e5",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "targetId": "bbb1-408a-e11f-7504",
+        "type": "selectionEntry"
+      }
+    ],
+    "sharedRules": [
+      {
+        "name": "Hit and Run",
+        "id": "f183-3eda-2b2b-6afe",
+        "description": "Rebels have sole access to the order 'Hit and Run', which operates as follows:\n \nCan move up to 10\".\n \nCan take 1 shot.\n \nNo figure in the group may be suppressed at the time the order is given.\n \nA rebel leader must be in the squad to issue this order.\n \nAll figures in the group must be in headset contact.",
+        "hidden": false
+      }
+    ],
+    "sharedSelectionEntries": [
+      {
+        "name": "Rebel Hero",
+        "id": "bbb1-408a-e11f-7504",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [{"name": "New CategoryLink", "id": "20ef-0ecf-e043-1e6d", "hidden": false, "primary": true, "targetId": "c5a0-7f86-5340-0499"}],
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 107}],
+        "entryLinks": [
+          {
+            "name": "Armor",
+            "id": "47bb-0f99-ca8b-faae",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "9490-e4be-1d60-0a47",
+            "type": "selectionEntryGroup",
+            "constraints": [
+              {
+                "id": "4c4f-d9e2-1d0d-7c03",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Weapon - melee",
+            "id": "4d60-3d20-ab05-c31d",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "9fb9-eee5-9e70-dbe5",
+            "type": "selectionEntryGroup"
+          },
+          {
+            "name": "Weapon - ranged",
+            "id": "f611-b637-1bba-f55f",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "13dd-cfdf-d082-66be",
+            "type": "selectionEntryGroup"
+          },
+          {
+            "name": "Special Weapons",
+            "id": "cbd8-5ef0-d56c-29e9",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "4a15-bece-ceb8-e824",
+            "type": "selectionEntryGroup"
+          },
+          {
+            "name": "5 Gear",
+            "id": "87a2-7c42-0bf6-9ac3",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "01bc-b373-fa2f-8a24",
+            "type": "selectionEntryGroup"
+          }
+        ],
+        "infoLinks": [
+          {"name": "Hero melee", "id": "4750-18b4-da4b-967b", "hidden": false, "targetId": "e83e-5907-ee59-4e5d", "type": "profile"},
+          {"name": "Heroic Save", "id": "91fb-ef37-5350-276e", "hidden": false, "targetId": "4682-c120-6f95-fa92", "type": "rule"},
+          {"name": "Heroic bonus", "id": "c243-e9b8-005f-70f4", "hidden": false, "targetId": "29de-51dc-f862-283b", "type": "rule"},
+          {"name": "Hit and Run", "id": "4173-e12d-4ad7-c264", "hidden": false, "targetId": "f183-3eda-2b2b-6afe", "type": "rule"},
+          {
+            "name": "Ranged damage vs. human",
+            "id": "21e8-c793-e781-ebaf",
+            "hidden": false,
+            "targetId": "ffbb-259f-b9f3-839d",
+            "type": "profile",
+            "modifiers": [
+              {
+                "field": "42f9-9585-f0b6-041a",
+                "type": "increment",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "02b5-6900-34e4-ade0",
+                    "field": "selections",
+                    "includeChildForces": false,
+                    "includeChildSelections": false,
+                    "percentValue": false,
+                    "scope": "bbb1-408a-e11f-7504",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "c070-6d6c-6abc-a422",
+                "type": "increment",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "02b5-6900-34e4-ade0",
+                    "field": "selections",
+                    "includeChildForces": false,
+                    "includeChildSelections": false,
+                    "percentValue": false,
+                    "scope": "bbb1-408a-e11f-7504",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "42f9-9585-f0b6-041a",
+                "type": "increment",
+                "value": 4,
+                "conditions": [
+                  {
+                    "childId": "6c84-7934-b009-837e",
+                    "field": "selections",
+                    "includeChildForces": false,
+                    "includeChildSelections": false,
+                    "percentValue": false,
+                    "scope": "bbb1-408a-e11f-7504",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "c070-6d6c-6abc-a422",
+                "type": "increment",
+                "value": 4,
+                "conditions": [
+                  {
+                    "childId": "6c84-7934-b009-837e",
+                    "field": "selections",
+                    "includeChildForces": false,
+                    "includeChildSelections": false,
+                    "percentValue": false,
+                    "scope": "bbb1-408a-e11f-7504",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "42f9-9585-f0b6-041a",
+                "type": "increment",
+                "value": 6,
+                "conditions": [
+                  {
+                    "childId": "d9dd-479a-c8d2-57e5",
+                    "field": "selections",
+                    "includeChildForces": false,
+                    "includeChildSelections": false,
+                    "percentValue": false,
+                    "scope": "bbb1-408a-e11f-7504",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "c070-6d6c-6abc-a422",
+                "type": "increment",
+                "value": 6,
+                "conditions": [
+                  {
+                    "childId": "d9dd-479a-c8d2-57e5",
+                    "field": "selections",
+                    "includeChildForces": false,
+                    "includeChildSelections": false,
+                    "percentValue": false,
+                    "scope": "bbb1-408a-e11f-7504",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cell",
+        "id": "5e59-75fc-ad88-0b51",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [{"name": "Unit", "id": "c7ba-56ba-6532-30f4", "hidden": false, "primary": true, "targetId": "ee39-e807-e80b-f42d"}],
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 0}],
+        "infoLinks": [
+          {"name": "Squads", "id": "d64b-c6a2-477b-667d", "hidden": false, "targetId": "5c99-097e-2eee-659d", "type": "rule"},
+          {"name": "Hit and Run", "id": "7165-177a-a9c0-f006", "hidden": false, "targetId": "f183-3eda-2b2b-6afe", "type": "rule"}
+        ],
+        "selectionEntries": [
+          {
+            "name": "Rebel",
+            "id": "063d-2582-83d3-068f",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "type": "unit",
+            "constraints": [
+              {
+                "id": "8092-73d4-1b86-da3b",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "min",
+                "value": 1
+              }
+            ],
+            "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 7}],
+            "entryLinks": [
+              {
+                "name": "Weapon - ranged",
+                "id": "0792-2cc0-8dd9-3587",
+                "collective": false,
+                "hidden": false,
+                "import": true,
+                "targetId": "13dd-cfdf-d082-66be",
+                "type": "selectionEntryGroup"
+              },
+              {
+                "name": "Armor",
+                "id": "6ccf-e28f-da2a-04b3",
+                "collective": false,
+                "hidden": false,
+                "import": true,
+                "targetId": "9490-e4be-1d60-0a47",
+                "type": "selectionEntryGroup",
+                "constraints": [
+                  {
+                    "id": "9b6a-2a55-f33f-2871",
+                    "field": "selections",
+                    "includeChildForces": false,
+                    "includeChildSelections": false,
+                    "percentValue": false,
+                    "scope": "parent",
+                    "shared": true,
+                    "type": "max",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "name": "Weapon - melee",
+                "id": "964e-2ad0-e22a-0385",
+                "collective": false,
+                "hidden": false,
+                "import": true,
+                "targetId": "9fb9-eee5-9e70-dbe5",
+                "type": "selectionEntryGroup"
+              },
+              {
+                "name": "Special Weapons",
+                "id": "6eae-2932-fe9b-9699",
+                "collective": false,
+                "hidden": false,
+                "import": true,
+                "targetId": "4a15-bece-ceb8-e824",
+                "type": "selectionEntryGroup"
+              },
+              {
+                "name": "Headset",
+                "id": "1375-0eb9-ce81-ac36",
+                "collective": false,
+                "hidden": false,
+                "import": true,
+                "targetId": "6e63-c897-35f0-220f",
+                "type": "selectionEntry"
+              },
+              {
+                "name": "5 Gear",
+                "id": "87e7-4be0-85a3-1802",
+                "collective": false,
+                "hidden": false,
+                "import": true,
+                "targetId": "01bc-b373-fa2f-8a24",
+                "type": "selectionEntryGroup"
+              }
+            ],
+            "infoLinks": [
+              {"name": "Human melee", "id": "50c3-4746-2787-2e9f", "hidden": false, "targetId": "54a3-344f-7e92-5968", "type": "profile"},
+              {
+                "name": "Ranged damage vs. human",
+                "id": "40d6-7217-ab56-c528",
+                "hidden": false,
+                "targetId": "ffbb-259f-b9f3-839d",
+                "type": "profile",
+                "modifiers": [
+                  {
+                    "field": "42f9-9585-f0b6-041a",
+                    "type": "increment",
+                    "value": 2,
+                    "conditions": [
+                      {
+                        "childId": "02b5-6900-34e4-ade0",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "percentValue": false,
+                        "scope": "063d-2582-83d3-068f",
+                        "shared": true,
+                        "type": "equalTo",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "c070-6d6c-6abc-a422",
+                    "type": "increment",
+                    "value": 2,
+                    "conditions": [
+                      {
+                        "childId": "02b5-6900-34e4-ade0",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "percentValue": false,
+                        "scope": "063d-2582-83d3-068f",
+                        "shared": true,
+                        "type": "equalTo",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "42f9-9585-f0b6-041a",
+                    "type": "increment",
+                    "value": 4,
+                    "conditions": [
+                      {
+                        "childId": "6c84-7934-b009-837e",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "percentValue": false,
+                        "scope": "063d-2582-83d3-068f",
+                        "shared": true,
+                        "type": "equalTo",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "c070-6d6c-6abc-a422",
+                    "type": "increment",
+                    "value": 4,
+                    "conditions": [
+                      {
+                        "childId": "6c84-7934-b009-837e",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "percentValue": false,
+                        "scope": "063d-2582-83d3-068f",
+                        "shared": true,
+                        "type": "equalTo",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "42f9-9585-f0b6-041a",
+                    "type": "increment",
+                    "value": 6,
+                    "conditions": [
+                      {
+                        "childId": "d9dd-479a-c8d2-57e5",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "percentValue": false,
+                        "scope": "063d-2582-83d3-068f",
+                        "shared": true,
+                        "type": "equalTo",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "field": "c070-6d6c-6abc-a422",
+                    "type": "increment",
+                    "value": 6,
+                    "conditions": [
+                      {
+                        "childId": "d9dd-479a-c8d2-57e5",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": false,
+                        "percentValue": false,
+                        "scope": "063d-2582-83d3-068f",
+                        "shared": true,
+                        "type": "equalTo",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "rules": [
+              {
+                "name": "Rebel",
+                "id": "e563-5947-e310-172a",
+                "description": "Rebels operate in squads of any size.\n\nThe squad will always contain a leader.\n\nRebels may optionally have headset contact (paid for at the start of the engagement); all rebels in the group must have headsets, if this option is used.",
+                "hidden": false
+              }
+            ],
+            "selectionEntryGroups": [
+              {
+                "name": "Rebel ranks",
+                "id": "b124-0d52-0a91-7c7f",
+                "collective": false,
+                "hidden": false,
+                "import": true,
+                "constraints": [
+                  {
+                    "id": "5233-7b43-42fd-6e75",
+                    "field": "selections",
+                    "includeChildForces": false,
+                    "includeChildSelections": true,
+                    "percentValue": false,
+                    "scope": "parent",
+                    "shared": true,
+                    "type": "max",
+                    "value": 1
+                  }
+                ],
+                "entryLinks": [
+                  {
+                    "name": "Upgrade - Sub-leader",
+                    "id": "d54d-a48d-8902-73de",
+                    "collective": false,
+                    "hidden": false,
+                    "import": true,
+                    "targetId": "b01e-8f63-3f22-1dbc",
+                    "type": "selectionEntry",
+                    "constraints": [
+                      {
+                        "id": "4530-1c8f-8569-e020",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": true,
+                        "percentValue": false,
+                        "scope": "5e59-75fc-ad88-0b51",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "modifiers": [{"field": "name", "type": "set", "value": "Rebel sub-leader"}]
+                  },
+                  {
+                    "name": "Upgrade - Leader",
+                    "id": "5103-d48e-ee9b-f077",
+                    "collective": false,
+                    "hidden": false,
+                    "import": true,
+                    "targetId": "e4b4-8170-da72-6c6b",
+                    "type": "selectionEntry",
+                    "constraints": [
+                      {
+                        "id": "29ed-969f-a586-6739",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": true,
+                        "percentValue": false,
+                        "scope": "5e59-75fc-ad88-0b51",
+                        "shared": true,
+                        "type": "min",
+                        "value": 1
+                      },
+                      {
+                        "id": "0cde-7c75-b633-c073",
+                        "field": "selections",
+                        "includeChildForces": false,
+                        "includeChildSelections": true,
+                        "percentValue": false,
+                        "scope": "5e59-75fc-ad88-0b51",
+                        "shared": true,
+                        "type": "max",
+                        "value": 1
+                      }
+                    ],
+                    "modifiers": [{"field": "name", "type": "set", "value": "Rebel leader"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sharedSelectionEntryGroups": [
+      {
+        "name": "Special Weapons",
+        "id": "4a15-bece-ceb8-e824",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "entryLinks": [
+          {
+            "name": "Flame thrower",
+            "id": "0fff-50fa-f946-a081",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "890b-8712-e7f6-77b9",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "8ef0-833e-fc57-fe36",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Grenade",
+            "id": "5fb8-5953-2e57-3dfb",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "cee2-32cd-763d-8e56",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "8f50-ce88-b360-f614",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "name": "Light missile launcher",
+            "id": "7c73-2e77-50e1-e7ec",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "3b17-86df-bd16-10db",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "ae78-6918-ed72-ed01",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Missile",
+            "id": "5ffa-78a2-dc72-d94d",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "0851-08a0-0706-c2e2",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "9f7b-c753-f7cb-a65c",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 5
+              }
+            ]
+          },
+          {
+            "name": "Smoke grenade",
+            "id": "4f26-61f9-6c72-bd14",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "b1bc-a5ec-0e7f-13b7",
+            "type": "selectionEntry"
+          }
+        ]
+      }
+    ]
+  }
+}
