@@ -1,0 +1,2350 @@
+{
+  "gameSystem": {
+    "name": "Kill Zone",
+    "id": "2409-8f27-4979-8239",
+    "authorContact": "mr.vitriol@web.de",
+    "authorName": "Mr. Vitriol",
+    "battleScribeVersion": 2.03,
+    "revision": 2,
+    "type": "gameSystem",
+    "xmlns": "http://www.battlescribe.net/schema/gameSystemSchema",
+    "categoryEntries": [
+      {"name": "Group", "id": "ee39-e807-e80b-f42d", "hidden": false},
+      {
+        "name": "Hero",
+        "id": "c5a0-7f86-5340-0499",
+        "hidden": false,
+        "constraints": [
+          {
+            "id": "2590-951c-bcdb-7765",
+            "field": "selections",
+            "includeChildForces": false,
+            "includeChildSelections": false,
+            "percentValue": false,
+            "scope": "parent",
+            "shared": true,
+            "type": "max",
+            "value": 1
+          }
+        ],
+        "infoLinks": [{"name": "Heroes are scarce", "id": "ae9d-74bd-d8f4-5934", "hidden": false, "targetId": "b87c-2471-ae52-cd4d", "type": "rule"}],
+        "modifiers": [
+          {
+            "field": "2590-951c-bcdb-7765",
+            "type": "increment",
+            "value": 1,
+            "repeats": [
+              {
+                "childId": "ee39-e807-e80b-f42d",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "repeats": 1,
+                "roundUp": false,
+                "scope": "ee39-e807-e80b-f42d",
+                "shared": true,
+                "value": 3
+              }
+            ]
+          }
+        ]
+      },
+      {"name": "Individual", "id": "fbd2-0726-113e-0380", "hidden": false}
+    ],
+    "costTypes": [{"name": "Points", "id": "5c85-6969-5b93-e18d", "defaultCostLimit": -1}],
+    "forceEntries": [
+      {
+        "name": "Standard game",
+        "id": "2d30-be0d-2a58-2270",
+        "hidden": false,
+        "categoryLinks": [
+          {"name": "Hero", "id": "b8fb-b0b7-2f2a-82a7", "hidden": false, "primary": false, "targetId": "c5a0-7f86-5340-0499"},
+          {"name": "Individual", "id": "21e0-54a8-5a3d-565a", "hidden": false, "primary": false, "targetId": "fbd2-0726-113e-0380"},
+          {"name": "Group", "id": "0641-c4e0-ed78-e2b8", "hidden": false, "primary": false, "targetId": "ee39-e807-e80b-f42d"}
+        ]
+      }
+    ],
+    "profileTypes": [
+      {
+        "name": "Weapon - ranged",
+        "id": "9807-bc8d-2755-208c",
+        "characteristicTypes": [
+          {"name": "Short Range", "id": "a909-d7e1-4204-0087"},
+          {"name": "Long Range", "id": "07a0-9b85-7177-349e"},
+          {"name": "Rapid Shots", "id": "7441-71b3-8347-a742"},
+          {"name": "Damage", "id": "e65c-8ba8-39a4-adf0"}
+        ]
+      },
+      {"name": "Weapon - hand to hand", "id": "a6bc-703b-2cb3-74a4", "characteristicTypes": [{"name": "Kill Score Bonus", "id": "812c-9228-6166-16d5"}]},
+      {
+        "name": "Weapon - area of effect",
+        "id": "f5f3-d505-8624-e581",
+        "characteristicTypes": [
+          {"name": "Short Range", "id": "9268-27d7-6ad6-a6c8"},
+          {"name": "Long Range", "id": "2d17-87d5-877c-6e00"},
+          {"name": "Rapid Shots", "id": "7ccf-29d7-4bac-8198"},
+          {"name": "Damage on Hit", "id": "8cda-d6bd-43b5-f862"},
+          {"name": "Damage on Miss", "id": "e66e-8547-36e6-4fad"},
+          {"name": "Area of Effect", "id": "fcc3-808e-4efc-38c9"}
+        ]
+      },
+      {"name": "Hand to hand combat dice", "id": "97ae-f686-f0ed-67d0", "characteristicTypes": [{"name": "Combat Dice", "id": "9752-cb13-33a0-2b27"}]},
+      {
+        "name": "Ranged damage",
+        "id": "20af-36f4-e61d-1192",
+        "characteristicTypes": [{"name": "Killed", "id": "42f9-9585-f0b6-041a"}, {"name": "Suppressed", "id": "c070-6d6c-6abc-a422"}]
+      },
+      {"name": "Armor", "id": "2135-ade7-a50d-4b79", "characteristicTypes": [{"name": "Hand to Hand Protection", "id": "676f-3974-56a5-b417"}]},
+      {
+        "name": "Drug",
+        "id": "5986-7b9a-4bf3-7846",
+        "characteristicTypes": [{"name": "Effects", "id": "d23d-ba71-9b81-edc8"}, {"name": "Side Effects", "id": "7a19-22b2-f1f5-33f2"}, {"name": "Overdose", "id": "f9fa-57a6-0f90-ec31"}]
+      }
+    ],
+    "publications": [{"name": "Kill Zone Playtest Module 1", "id": "2409-8f27-pubN67821"}],
+    "sharedProfiles": [
+      {
+        "name": "Medium hand to hand weapon",
+        "id": "b1e2-4827-4fa2-31cc",
+        "hidden": false,
+        "typeId": "a6bc-703b-2cb3-74a4",
+        "typeName": "Weapon - hand to hand",
+        "characteristics": [{"name": "Kill Score Bonus", "$text": "+2", "typeId": "812c-9228-6166-16d5"}]
+      },
+      {
+        "name": "Heavy hand to hand weapon",
+        "id": "93ea-adb6-9aeb-9e9b",
+        "hidden": false,
+        "typeId": "a6bc-703b-2cb3-74a4",
+        "typeName": "Weapon - hand to hand",
+        "characteristics": [{"name": "Kill Score Bonus", "$text": "+3", "typeId": "812c-9228-6166-16d5"}]
+      },
+      {
+        "name": "Light hand to hand weapon",
+        "id": "6d44-42d4-d364-1349",
+        "hidden": false,
+        "typeId": "a6bc-703b-2cb3-74a4",
+        "typeName": "Weapon - hand to hand",
+        "characteristics": [{"name": "Kill Score Bonus", "$text": "+1", "typeId": "812c-9228-6166-16d5"}]
+      },
+      {
+        "name": "Human hand to hand",
+        "id": "54a3-344f-7e92-5968",
+        "hidden": false,
+        "typeId": "97ae-f686-f0ed-67d0",
+        "typeName": "Hand to hand combat dice",
+        "characteristics": [{"name": "Combat Dice", "$text": "1", "typeId": "9752-cb13-33a0-2b27"}]
+      },
+      {
+        "name": "Hero hand to hand",
+        "id": "e83e-5907-ee59-4e5d",
+        "hidden": false,
+        "typeId": "97ae-f686-f0ed-67d0",
+        "typeName": "Hand to hand combat dice",
+        "characteristics": [{"name": "Combat Dice", "$text": "2", "typeId": "9752-cb13-33a0-2b27"}]
+      },
+      {
+        "name": "Ranged damage vs. human",
+        "id": "ffbb-259f-b9f3-839d",
+        "hidden": false,
+        "typeId": "20af-36f4-e61d-1192",
+        "typeName": "Ranged damage",
+        "characteristics": [{"name": "Killed", "$text": "7", "typeId": "42f9-9585-f0b6-041a"}, {"name": "Suppressed", "$text": "1", "typeId": "c070-6d6c-6abc-a422"}]
+      },
+      {
+        "name": "Explosive round launcher",
+        "id": "dd14-29ca-a0f9-8303",
+        "hidden": false,
+        "typeId": "9807-bc8d-2755-208c",
+        "typeName": "Weapon - ranged",
+        "characteristics": [
+          {"name": "Short Range", "$text": "N/A", "typeId": "a909-d7e1-4204-0087"},
+          {"name": "Long Range", "$text": "6\"", "typeId": "07a0-9b85-7177-349e"},
+          {"name": "Rapid Shots", "$text": "1", "typeId": "7441-71b3-8347-a742"},
+          {"name": "Damage", "$text": "5 Dice", "typeId": "e65c-8ba8-39a4-adf0"}
+        ]
+      }
+    ],
+    "sharedRules": [
+      {"name": "Sighting aid", "id": "32ef-b224-d38c-7243", "description": "A Sighting aid grants a bonus of +1 on rolls to hit in ranged combat.", "hidden": false},
+      {
+        "name": "Heroic save",
+        "id": "4682-c120-6f95-fa92",
+        "description": "If a Hero type is killed by any method, the Hero player immediately rolls 1 dice:\n\n3 - 6 : Hero/Heroine is not killed, remains in play, but become suppressed if not already so. \n1 - 2 : The Hero type is indeed killed.",
+        "hidden": false
+      },
+      {
+        "name": "Heroic bonus",
+        "id": "29de-51dc-f862-283b",
+        "description": "A Hero/Heroine benefits from a +1 bonus on ranged attacks.\n\nIf a Hero/Heroine is suppressed they automatically remove it during their turn in Event 2.\n\nA Hero/Heroine can automatically change orders during Event 3. provided they are not currently suppressed.\n\nIn hand to hand combat a loosing hero may substract 2 from the Kill Score before checking for kill / suppress.",
+        "hidden": false
+      },
+      {
+        "name": "Night sight",
+        "id": "dea8-5779-70c1-bd1c",
+        "description": "Using a 'night sight' removes the restrictions on maximum range and +1 close range bonus during darkness.",
+        "hidden": false
+      },
+      {"name": "Gang", "id": "7534-9126-6c9e-3c86", "description": "A gang must always start the game with a gang leader.", "hidden": false},
+      {
+        "name": "Squads",
+        "id": "5c99-097e-2eee-659d",
+        "description": "A squad must always start the game with a squad leader.\nA squad must always start the game with a sub-leader.",
+        "hidden": false
+      },
+      {
+        "name": "Heroes are scarce",
+        "id": "b87c-2471-ae52-cd4d",
+        "description": "There can only be one Hero type per 3 allied groups or part thereof.",
+        "hidden": false
+      },
+      {
+        "name": "Armor",
+        "id": "bb05-8ade-b27c-8cc1",
+        "description": "The target of a ranged attack or looser of a hand to hand combat (lower Kill Score) may substract the Protection value of an armor from the incomming ranged damage or Kill Score before checking for kill / suppression.",
+        "hidden": false
+      },
+      {
+        "name": "Radio contact",
+        "id": "1aef-02dd-6ddd-1a1f",
+        "description": "Radio contact allows a group to change orders even if distributed over an area larger than 8\".\n\nIf any groups have the same Initative score, a group with radio contact will beat a group not in radio contact.",
+        "hidden": false
+      },
+      {
+        "name": "Optional",
+        "id": "5d9e-9c06-0f00-23f4",
+        "description": "Part of the Kill Zone playtest rules - use at your own discretion.",
+        "hidden": false,
+        "publicationId": "2409-8f27-pubN67821"
+      },
+      {"name": "Fire in Buildings", "id": "1f26-95b0-3257-948f", "hidden": false, "page": 8, "publicationId": "2409-8f27-pubN67821"},
+      {
+        "name": "Stun weapon",
+        "id": "fb8b-a830-b1c0-3bb7",
+        "description": "Stun weapons will only suppress the victim, not kill it.",
+        "hidden": false,
+        "page": 6,
+        "publicationId": "2409-8f27-pubN67821"
+      },
+      {
+        "name": "All or nothing",
+        "id": "b2e2-5e89-eab1-9dce",
+        "description": "If this option is selected, all members of a squad/gang must be equipped with it.",
+        "hidden": false
+      },
+      {
+        "name": "Overdose",
+        "id": "a980-d561-9f4c-6ba5",
+        "description": "At the start of every battel, roll on die for each gang member that has taken drugs.\n\nRoll:\n1-5 OK. The gang member may carry on as normal.\n6 Overdose. The gang member has had a bad trip (see Overdose rules for the drug in use).\n\nIt is the choice of the controlling player which members of the gang suffer from an overdose. If overdosed a gang member will still benefit from the effect of a drug and suffer from the side effects.\n\nHeroes that overdose may use their heroic save. If successfull they may take part in the battle normally but will not be under the effect of any drug.",
+        "hidden": false,
+        "page": 7,
+        "publicationId": "2409-8f27-pubN67821"
+      },
+      {
+        "name": "Drugs",
+        "id": "2f15-599e-9500-f84c",
+        "description": "All members of the same group must take the same drug or drugs. Any gang member may take drugs. Squad members may not take drugs because of their tough training and disciplined nature. Characters with cyberware cannot take drugs as it interferes with the delciate balance of their electrochemical equipment. Drugs have no effect on replicants, droids or robots.",
+        "hidden": false,
+        "page": 6,
+        "publicationId": "2409-8f27-pubN67821"
+      },
+      {
+        "name": "Two weapon wielder",
+        "id": "18de-6ce3-b833-0e97",
+        "description": "If a figure carries a hand to hand weapon in each hand, use the higher modifier, and add 1.",
+        "hidden": false
+      },
+      {
+        "name": "Grenade",
+        "id": "8e01-2f4f-2c98-6e75",
+        "description": "Grenades can be used with any orders that allow shooting. 1 grenade can be primed and thrown instead of the figure shooting.\n\nlf the figure has 'shoot orders' they can fire 1 volley and prime and throw 1 grenade.\n\nGrenades are bought per piece and represented by target counters. Keep the target counters face down next to the figure that carries them. Note that if you are using differnt types of grenades, flame throwers or missiles, it is a good idea to give counters a distinctive colour from the others.",
+        "hidden": false
+      }
+    ],
+    "sharedSelectionEntries": [
+      {
+        "name": "Handgun - heavy",
+        "id": "85b5-da83-a65c-9138",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 7}],
+        "infoLinks": [
+          {"name": "Light", "id": "bde4-7da4-e900-df7d", "hidden": false, "targetId": "6d44-42d4-d364-1349", "type": "profile"},
+          {"name": "Two weapon wielder", "id": "467e-48d0-81e3-c5ec", "hidden": false, "targetId": "18de-6ce3-b833-0e97", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Handgun - heavy",
+            "id": "e238-472c-bf18-978e",
+            "hidden": false,
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 5\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "5 - 14\"", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "2", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "3 dice", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Handgun",
+        "id": "2953-3c22-a307-02e4",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 4}],
+        "infoLinks": [
+          {"name": "Light", "id": "ea98-68b8-cfa2-9690", "hidden": false, "targetId": "6d44-42d4-d364-1349", "type": "profile"},
+          {"name": "Two weapon wielder", "id": "baa3-2418-64e3-6ee5", "hidden": false, "targetId": "18de-6ce3-b833-0e97", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Handgun",
+            "id": "ee08-e1b4-77d0-988b",
+            "hidden": false,
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 8\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "8 - 18\"", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "2", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "2 dice", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Machine pistol",
+        "id": "50d9-9b99-9988-dab0",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 12}],
+        "infoLinks": [{"name": "Light", "id": "9cd0-6647-901a-ee56", "hidden": false, "targetId": "6d44-42d4-d364-1349", "type": "profile"}],
+        "profiles": [
+          {
+            "name": "Machine pistol",
+            "id": "bda3-defc-9726-97c5",
+            "hidden": false,
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 8\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "8 - 24\"", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "5", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "2 dice", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Shotgun - auto",
+        "id": "015b-4e7c-4be9-ea1a",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 3}],
+        "profiles": [
+          {
+            "name": "Shotgun - auto",
+            "id": "9f6f-d48e-a6d1-caea",
+            "hidden": false,
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 6\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "N/A", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "2", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "4 dice", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Shotgun",
+        "id": "8f5c-a0f1-3e40-a5c4",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 2}],
+        "profiles": [
+          {
+            "name": "Shotgun",
+            "id": "35d4-4b11-f0f4-635d",
+            "hidden": false,
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 6\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "N/A", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "1", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "4 dice", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Assault Rifle",
+        "id": "719c-801b-dec1-a5c5",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 20}],
+        "profiles": [
+          {
+            "name": "Assault rifle",
+            "id": "fb0c-a928-d2c3-3b52",
+            "hidden": false,
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 10\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "10 - 30\"", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "3", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "3 dice", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Assault Rifle - military",
+        "id": "9e23-9648-3c45-86ea",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 23}],
+        "infoLinks": [{"name": "Explosive round launcher", "id": "e660-671f-80f1-89fe", "hidden": false, "targetId": "dd14-29ca-a0f9-8303", "type": "profile"}],
+        "profiles": [
+          {
+            "name": "Assault rifle - military",
+            "id": "96e0-c5e4-a793-afae",
+            "hidden": false,
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 10\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "10 - 30\"", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "3", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "3 dice", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ],
+        "rules": [
+          {
+            "name": "Assault Rifle - military",
+            "id": "8459-a4c7-9bdf-d684",
+            "description": "A military assault rifle incorporates an explosive round launcher. On single shots, 1 shot is fired from either rifle or launcher. On rapid shot fire, either 2 shots from the rifle and 1 from the launcher, or 3 shots from the rifle and none from the launcher are allowed.",
+            "hidden": false
+          }
+        ]
+      },
+      {
+        "name": "Light assault cannon",
+        "id": "f10c-3d79-3d75-e4ae",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 25}],
+        "profiles": [
+          {
+            "name": "Light assault cannon",
+            "id": "c6a3-02b7-b3a4-ae39",
+            "hidden": false,
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 14\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "14 - 24\"", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "3", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "4 dice", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Scatter gun",
+        "id": "9dda-a228-c485-cd2b",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 4}],
+        "profiles": [
+          {
+            "name": "Scatter gun",
+            "id": "0671-3e2f-1c93-b058",
+            "hidden": false,
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 4\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "4 - 8\"", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "1", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "4 dice", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sighting aid",
+        "id": "02c0-abd1-d54b-92ed",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 10}],
+        "infoLinks": [{"name": "Sighting aid", "id": "82aa-e6da-3615-be19", "hidden": false, "targetId": "32ef-b224-d38c-7243", "type": "rule"}]
+      },
+      {
+        "name": "Headset",
+        "id": "6e63-c897-35f0-220f",
+        "collective": true,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "constraints": [
+          {
+            "id": "f8e5-a0b0-6a66-8feb",
+            "field": "selections",
+            "includeChildForces": false,
+            "includeChildSelections": false,
+            "percentValue": false,
+            "scope": "parent",
+            "shared": true,
+            "type": "max",
+            "value": 1
+          }
+        ],
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 5}],
+        "infoLinks": [
+          {"name": "Radio contact", "id": "672d-5f51-dc62-417e", "hidden": false, "targetId": "1aef-02dd-6ddd-1a1f", "type": "rule"},
+          {"name": "Group gear", "id": "0736-b52d-cbf7-53b8", "hidden": false, "targetId": "b2e2-5e89-eab1-9dce", "type": "rule"}
+        ]
+      },
+      {
+        "name": "Night sight",
+        "id": "120a-b556-2697-f699",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 10}],
+        "infoLinks": [{"name": "Night sight", "id": "121a-2eb1-10a4-630c", "hidden": false, "targetId": "dea8-5779-70c1-bd1c", "type": "rule"}]
+      },
+      {
+        "name": "Razor claws",
+        "id": "3a7f-e92e-dfcf-66c1",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 2}],
+        "infoLinks": [
+          {"name": "Razor claws", "id": "d9b6-a651-1a7a-4eff", "hidden": false, "targetId": "b1e2-4827-4fa2-31cc", "type": "profile"},
+          {"name": "Two weapon wielder", "id": "bbad-bcdd-eddd-46ff", "hidden": false, "targetId": "18de-6ce3-b833-0e97", "type": "rule"}
+        ]
+      },
+      {
+        "name": "Sword",
+        "id": "4eaf-555f-1469-e7a8",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 3}],
+        "infoLinks": [
+          {"name": "Sword", "id": "0639-2737-28bc-006a", "hidden": false, "targetId": "93ea-adb6-9aeb-9e9b", "type": "profile"},
+          {"name": "Two weapon wielder", "id": "9dba-7254-4349-c21c", "hidden": false, "targetId": "18de-6ce3-b833-0e97", "type": "rule"}
+        ]
+      },
+      {
+        "name": "Chain",
+        "id": "025b-8b0b-2812-a1a1",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 1}],
+        "infoLinks": [
+          {"name": "Light", "id": "ffad-6051-eb98-95ab", "hidden": false, "targetId": "6d44-42d4-d364-1349", "type": "profile"},
+          {"name": "Two weapon wielder", "id": "3e01-42fb-6d07-e99b", "hidden": false, "targetId": "18de-6ce3-b833-0e97", "type": "rule"}
+        ]
+      },
+      {
+        "name": "Armor - I light",
+        "id": "02b5-6900-34e4-ade0",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 4}],
+        "infoLinks": [{"name": "Armor", "id": "d517-b171-9095-645b", "hidden": false, "targetId": "bb05-8ade-b27c-8cc1", "type": "rule"}],
+        "profiles": [
+          {
+            "name": "Armor - light",
+            "id": "5933-d892-95d9-7683",
+            "hidden": false,
+            "typeId": "2135-ade7-a50d-4b79",
+            "typeName": "Armor",
+            "characteristics": [{"name": "Hand to Hand Protection", "$text": "2", "typeId": "676f-3974-56a5-b417"}]
+          }
+        ]
+      },
+      {
+        "name": "Cyborg - Model S",
+        "id": "e2ab-88db-25d4-f886",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [{"name": "New CategoryLink", "id": "d051-d740-15c9-5b52", "hidden": false, "primary": true, "targetId": "fbd2-0726-113e-0380"}],
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 75}],
+        "entryLinks": [
+          {
+            "name": "Cyborg Gear",
+            "id": "1e7e-9fef-dd17-2694",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "9044-59b4-011f-4330",
+            "type": "selectionEntryGroup"
+          }
+        ],
+        "infoLinks": [
+          {"name": "Sighting aid", "id": "cf71-bc22-c9b4-a19e", "hidden": false, "targetId": "32ef-b224-d38c-7243", "type": "rule"},
+          {"name": "Night sight", "id": "1301-42d9-fca7-14e7", "hidden": false, "targetId": "dea8-5779-70c1-bd1c", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Cyborg hand to hand",
+            "id": "5336-02ac-b9c4-e6d9",
+            "hidden": false,
+            "typeId": "97ae-f686-f0ed-67d0",
+            "typeName": "Hand to hand combat dice",
+            "characteristics": [{"name": "Combat Dice", "$text": "2 Dice +2", "typeId": "9752-cb13-33a0-2b27"}]
+          },
+          {
+            "name": "Ranged damage vs. cyborg",
+            "id": "0e43-26af-59ec-059c",
+            "hidden": false,
+            "typeId": "20af-36f4-e61d-1192",
+            "typeName": "Ranged damage",
+            "characteristics": [{"name": "Killed", "$text": "14", "typeId": "42f9-9585-f0b6-041a"}, {"name": "Suppressed", "$text": "8", "typeId": "c070-6d6c-6abc-a422"}]
+          },
+          {
+            "name": "Cyborg - Model S",
+            "id": "c6fa-e455-6b5b-9049",
+            "hidden": false,
+            "typeId": "2135-ade7-a50d-4b79",
+            "typeName": "Armor",
+            "characteristics": [{"name": "Hand to Hand Protection", "$text": "6", "typeId": "676f-3974-56a5-b417"}]
+          }
+        ],
+        "rules": [
+          {
+            "name": "Cyborg - Model S",
+            "id": "0ef9-dcd3-0dfa-4d9b",
+            "description": "A Cyborg S  has the following equipment inbuilt: Sighting aid, Night sight.\n\nA Cyborg S type is programmed for only the following orders: Shoot, Keep down, Assault.\n\nIn hand to hand combat they will use 2 combat dice, and add a modifier of +2 regardless of any weapon they may carry. As looser of a hand to hand combat, a cyborg substracts 6 from the Kill Score before checking for kill / supress.\n \nA Cyborg S type gains a +3 bonus to remove suppression.\n\nA Cyborg S type is programmed to use only the following weapons: All handguns, Shotguns, Machine pistols.\n \nA Cyborg S type can add 1 extra volley to all shooting weapons, provided they can fire more than 1 shot.\n \nDuring darkness a Cyborg S type has no movement penalty.\n \nA Cyborg S type cannot be captured.",
+            "hidden": false
+          }
+        ]
+      },
+      {
+        "name": "Hand grenade",
+        "id": "cee2-32cd-763d-8e56",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 6}],
+        "infoLinks": [{"name": "Grenade", "id": "7689-c330-5d34-06fb", "hidden": false, "targetId": "8e01-2f4f-2c98-6e75", "type": "rule"}],
+        "profiles": [
+          {
+            "name": "Hand grenade",
+            "id": "b1bb-a0d5-227a-1f2f",
+            "hidden": false,
+            "typeId": "f5f3-d505-8624-e581",
+            "typeName": "Weapon - area of effect",
+            "characteristics": [
+              {"name": "Short Range", "$text": "N/A", "typeId": "9268-27d7-6ad6-a6c8"},
+              {"name": "Long Range", "$text": "6\"", "typeId": "2d17-87d5-877c-6e00"},
+              {"name": "Rapid Shots", "$text": "1", "typeId": "7ccf-29d7-4bac-8198"},
+              {"name": "Damage on Hit", "$text": "4 dice", "typeId": "8cda-d6bd-43b5-f862"},
+              {"name": "Damage on Miss", "$text": "2 dice", "typeId": "e66e-8547-36e6-4fad"},
+              {"name": "Area of Effect", "$text": "2\" radius", "typeId": "fcc3-808e-4efc-38c9"}
+            ]
+          }
+        ],
+        "rules": [
+          {
+            "name": "Hand grenade",
+            "id": "0eab-f6d4-1d61-9fb1",
+            "description": "Select an aiming point (e.g. an enemy figure) by placing a target counter face up on the target.\n\nApply targeting as normal.\n\nHit = All figures within 2\" of the aiming point take 4 dice damage.Miss = All figures within 2\" of the aiming point take 2 dice damage.\n \nAll target cover and target kill types operate as normal.\n \nRemove the target counter from play (the grenade has been used).",
+            "hidden": false
+          }
+        ]
+      },
+      {
+        "name": "Flame thrower",
+        "id": "890b-8712-e7f6-77b9",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 25}],
+        "infoLinks": [{"name": "Fire in Buildings", "id": "9c15-89c9-a4d3-7b43", "hidden": false, "targetId": "1f26-95b0-3257-948f", "type": "rule"}],
+        "profiles": [
+          {
+            "name": "Flame thrower",
+            "id": "4dee-cfba-c421-5c89",
+            "hidden": false,
+            "typeId": "f5f3-d505-8624-e581",
+            "typeName": "Weapon - area of effect",
+            "characteristics": [
+              {"name": "Short Range", "$text": "N/A", "typeId": "9268-27d7-6ad6-a6c8"},
+              {"name": "Long Range", "$text": "0 - 5\"", "typeId": "2d17-87d5-877c-6e00"},
+              {"name": "Rapid Shots", "$text": "1", "typeId": "7ccf-29d7-4bac-8198"},
+              {"name": "Damage on Hit", "$text": "4 dice", "typeId": "8cda-d6bd-43b5-f862"},
+              {"name": "Damage on Miss", "$text": "2 dice", "typeId": "e66e-8547-36e6-4fad"},
+              {"name": "Area of Effect", "$text": "1\"", "typeId": "fcc3-808e-4efc-38c9"}
+            ]
+          }
+        ],
+        "rules": [
+          {
+            "name": "Flame thrower",
+            "id": "2f94-9d44-2076-6ffd",
+            "description": "A flame thrower will have enough fuel for 6 shots.\n\nFlame thrower volleys are represented by target counters. Keep the target counters face down next to the figure that carries them. Note that if you are also using grenades or missiles, it is a good idea to give flame thrower counters a distinctive colour from the others.\n\nFiring flame throwers into rooms:\nAn enclosed space is deemed a room not exceeding 6\" x 6\".\nIf you fire a flame thrower into an encloesed space. Everything will be automatically hit.",
+            "hidden": false
+          }
+        ]
+      },
+      {
+        "name": "Light missile launcher",
+        "id": "3b17-86df-bd16-10db",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 24}],
+        "profiles": [
+          {
+            "name": "Light missile launcher",
+            "id": "6fed-4016-ffeb-d46f",
+            "hidden": false,
+            "typeId": "f5f3-d505-8624-e581",
+            "typeName": "Weapon - area of effect",
+            "characteristics": [
+              {"name": "Short Range", "$text": "N/A", "typeId": "9268-27d7-6ad6-a6c8"},
+              {"name": "Long Range", "$text": "0 - 48\"", "typeId": "2d17-87d5-877c-6e00"},
+              {"name": "Rapid Shots", "$text": "1", "typeId": "7ccf-29d7-4bac-8198"},
+              {"name": "Damage on Hit", "$text": "5 dice", "typeId": "8cda-d6bd-43b5-f862"},
+              {"name": "Damage on Miss", "$text": "N/A", "typeId": "e66e-8547-36e6-4fad"},
+              {"name": "Area of Effect", "$text": "4\"", "typeId": "fcc3-808e-4efc-38c9"}
+            ]
+          }
+        ],
+        "rules": [
+          {
+            "name": "Lock-on",
+            "id": "e146-f8d6-7b85-720b",
+            "description": "The Lock-on method will replace targeting during shooting.\n \nPlace a targeting counter face up next to the visually acquired target.\n \nRoll 1 dice:\nScore 3-6 : Lock on acquired, missile launches and hits target. Roll 5 dice damage for all figures within 4\" of the target counter. Remove the target counter (the missile has been fired).\n\nScore 1-2 : Lock on fails, missile does not launch. Take back the target counter. Shooting is finished for this figure.\n \nAll target cover and target kill types operate as normal.",
+            "hidden": false
+          },
+          {
+            "name": "Light missile launcher",
+            "id": "70d0-3dda-abf8-8ada",
+            "description": "A figure must have 'Snipe' orders to operate and fire a missile launcher.\n\nMissiles are represented by target counters. Keep the target counters face down next to the figure that carries them. Note that if you are also using flame throwers or hand grenades, it is a good idea to give the missile counters a distinctive colour from the others.",
+            "hidden": false
+          }
+        ]
+      },
+      {
+        "name": "Upgrade - Leader",
+        "id": "e4b4-8170-da72-6c6b",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 10}]
+      },
+      {
+        "name": "Upgrade - Sub-leader",
+        "id": "b01e-8f63-3f22-1dbc",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 5}]
+      },
+      {
+        "name": "Explosive round launcher",
+        "id": "7119-ee3f-6884-714b",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 0}],
+        "infoLinks": [{"name": "Explosive round launcher", "id": "3521-3360-83c9-8075", "hidden": false, "targetId": "dd14-29ca-a0f9-8303", "type": "profile"}]
+      },
+      {
+        "name": "Light missile",
+        "id": "0851-08a0-0706-c2e2",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 20}]
+      },
+      {
+        "name": "Armor - II medium",
+        "id": "6c84-7934-b009-837e",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "page": 6,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 5}],
+        "infoLinks": [
+          {"name": "Optional", "id": "2a1b-70b9-d81f-3160", "hidden": false, "targetId": "5d9e-9c06-0f00-23f4", "type": "rule"},
+          {"name": "Armor", "id": "f4eb-b84a-edab-c470", "hidden": false, "targetId": "bb05-8ade-b27c-8cc1", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Armor - medium",
+            "id": "b56e-d49b-8509-1d5a",
+            "hidden": false,
+            "page": 6,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "2135-ade7-a50d-4b79",
+            "typeName": "Armor",
+            "characteristics": [{"name": "Hand to Hand Protection", "$text": "3", "typeId": "676f-3974-56a5-b417"}]
+          }
+        ]
+      },
+      {
+        "name": "Armor - III heavy",
+        "id": "d9dd-479a-c8d2-57e5",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "page": 6,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 8}],
+        "infoLinks": [
+          {"name": "Optional", "id": "19aa-0ffe-0eb6-26ee", "hidden": false, "targetId": "5d9e-9c06-0f00-23f4", "type": "rule"},
+          {"name": "Armor", "id": "eca1-c173-dc49-44f3", "hidden": false, "targetId": "bb05-8ade-b27c-8cc1", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Armor - heavy",
+            "id": "44f7-9ed3-5d39-e151",
+            "hidden": false,
+            "page": 6,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "2135-ade7-a50d-4b79",
+            "typeName": "Armor",
+            "characteristics": [{"name": "Hand to Hand Protection", "$text": "4", "typeId": "676f-3974-56a5-b417"}]
+          }
+        ]
+      },
+      {
+        "name": "Crossbow",
+        "id": "98d0-c95b-b0ab-cbd8",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "page": 6,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 4}],
+        "infoLinks": [{"name": "Optional", "id": "778b-bb94-29ff-1027", "hidden": false, "targetId": "5d9e-9c06-0f00-23f4", "type": "rule"}],
+        "profiles": [
+          {
+            "name": "Crossbow",
+            "id": "01f5-24fb-c7bb-deaf",
+            "hidden": false,
+            "page": 6,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 10\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "10 - 24\"", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "1", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "3 dice", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Molotov cocktail",
+        "id": "5f2b-0e5e-f482-c454",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "page": 6,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 4}],
+        "infoLinks": [
+          {"name": "Optional", "id": "2e88-e3b8-02f2-654d", "hidden": false, "targetId": "5d9e-9c06-0f00-23f4", "type": "rule"},
+          {"name": "Fire in Buildings", "id": "17c6-66e4-8205-34aa", "hidden": false, "targetId": "1f26-95b0-3257-948f", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Molotov Cocktail",
+            "id": "c4b8-edbf-3535-edbd",
+            "hidden": false,
+            "page": 6,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 5\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "N/A", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "1", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "2", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Pick",
+        "id": "fbe3-cf1e-9dcb-366f",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 2}],
+        "infoLinks": [
+          {"name": "Medium", "id": "b0dc-7b4f-0af4-1a9c", "hidden": false, "targetId": "b1e2-4827-4fa2-31cc", "type": "profile"},
+          {"name": "Optional", "id": "8fe4-6afc-01f6-07ea", "hidden": false, "targetId": "5d9e-9c06-0f00-23f4", "type": "rule"},
+          {"name": "Two weapon wielder", "id": "a712-2d86-ea09-d20c", "hidden": false, "targetId": "18de-6ce3-b833-0e97", "type": "rule"}
+        ]
+      },
+      {
+        "name": "Stunstick",
+        "id": "f0a5-e2b2-9a6b-3050",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "page": 6,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 3}],
+        "infoLinks": [
+          {"name": "Medium", "id": "936e-dbbe-087a-4cdc", "hidden": false, "targetId": "b1e2-4827-4fa2-31cc", "type": "profile"},
+          {"name": "Stun weapon", "id": "8371-bded-9128-976f", "hidden": false, "targetId": "fb8b-a830-b1c0-3bb7", "type": "rule"},
+          {"name": "Optional", "id": "32ba-370a-1c55-1b89", "hidden": false, "targetId": "5d9e-9c06-0f00-23f4", "type": "rule"},
+          {"name": "Two weapon wielder", "id": "199e-144b-2efa-1281", "hidden": false, "targetId": "18de-6ce3-b833-0e97", "type": "rule"}
+        ]
+      },
+      {
+        "name": "Speed",
+        "id": "1c50-5853-4515-5c1d",
+        "collective": true,
+        "hidden": false,
+        "import": true,
+        "page": 7,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 4}],
+        "infoLinks": [
+          {"name": "All or nothing", "id": "7558-d3bf-830b-cc83", "hidden": false, "targetId": "b2e2-5e89-eab1-9dce", "type": "rule"},
+          {"name": "Overdose", "id": "9ee1-09c3-95ce-b1da", "hidden": false, "targetId": "a980-d561-9f4c-6ba5", "type": "rule"},
+          {"name": "Drugs", "id": "20b4-a40d-a0e3-4586", "hidden": false, "targetId": "2f15-599e-9500-f84c", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Speed",
+            "id": "91a3-5923-d38e-f09a",
+            "hidden": false,
+            "page": 7,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "5986-7b9a-4bf3-7846",
+            "typeName": "Drug",
+            "characteristics": [
+              {"name": "Effects", "$text": "Make all moves at +4\". Add +1 to Kill Score.", "typeId": "d23d-ba71-9b81-edc8"},
+              {"name": "Side Effects", "$text": "Must move at least half of the modified movement rate every turn.", "typeId": "7a19-22b2-f1f5-33f2"},
+              {"name": "Overdose", "$text": "Must move the full modified movement rate every turn.", "typeId": "f9fa-57a6-0f90-ec31"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Haywire",
+        "id": "5699-5913-aaec-24e3",
+        "collective": true,
+        "hidden": false,
+        "import": true,
+        "page": 7,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 10}],
+        "infoLinks": [
+          {"name": "All or nothing", "id": "707a-d20f-fb23-7b84", "hidden": false, "targetId": "b2e2-5e89-eab1-9dce", "type": "rule"},
+          {"name": "Overdose", "id": "e52c-d616-1b62-b2c7", "hidden": false, "targetId": "a980-d561-9f4c-6ba5", "type": "rule"},
+          {"name": "Drugs", "id": "69a4-90fe-f873-c119", "hidden": false, "targetId": "2f15-599e-9500-f84c", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Haywire",
+            "id": "0495-426a-3c9e-6ac5",
+            "hidden": false,
+            "page": 7,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "5986-7b9a-4bf3-7846",
+            "typeName": "Drug",
+            "characteristics": [
+              {"name": "Effects", "$text": "Make all moves at +2\". Add +2 to the Kill Score. Cannot be suppressed by any means.", "typeId": "d23d-ba71-9b81-edc8"},
+              {
+                "name": "Side Effects",
+                "$text": "Must move at least half their modified movement rate towards the nearest visible enemy figure. May not be put on Stay Sharp, Keep Down or Snipe orders.",
+                "typeId": "7a19-22b2-f1f5-33f2"
+              },
+              {
+                "name": "Overdose",
+                "$text": "Must move all their modified movement rate towards the nearest enemy figure. The enemy player may reposition the overdosed figure by up to 2\" at the end of the figures movement. The figure may not be repostitioned into or out of hand to hand combat",
+                "typeId": "f9fa-57a6-0f90-ec31"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dove",
+        "id": "3caa-fb66-5349-2e3b",
+        "collective": true,
+        "hidden": false,
+        "import": true,
+        "page": 7,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 4}],
+        "infoLinks": [
+          {"name": "All or nothing", "id": "59c6-de5b-4765-9ee3", "hidden": false, "targetId": "b2e2-5e89-eab1-9dce", "type": "rule"},
+          {"name": "Overdose", "id": "29c5-73a1-eb65-1f31", "hidden": false, "targetId": "a980-d561-9f4c-6ba5", "type": "rule"},
+          {"name": "Drugs", "id": "d49b-4eed-cfa9-899b", "hidden": false, "targetId": "2f15-599e-9500-f84c", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Dove",
+            "id": "7773-7b7e-0696-8141",
+            "hidden": false,
+            "page": 7,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "5986-7b9a-4bf3-7846",
+            "typeName": "Drug",
+            "characteristics": [
+              {"name": "Effects", "$text": "The user may not be suppresed by any means.", "typeId": "d23d-ba71-9b81-edc8"},
+              {"name": "Side Effects", "$text": "The user may not be placed on Keep down orders.", "typeId": "7a19-22b2-f1f5-33f2"},
+              {
+                "name": "Overdose",
+                "$text": "The enemy player may repositon the overdosed figure by up to 1\" at the end of the figures movement. The figure may not be repositioned into or out of hand to hand combat. The overdosed figure may not claim cover bonuses.",
+                "typeId": "f9fa-57a6-0f90-ec31"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Alcohol",
+        "id": "7382-5c7e-ab63-d97b",
+        "collective": true,
+        "hidden": false,
+        "import": true,
+        "page": 7,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 0}],
+        "infoLinks": [
+          {"name": "All or nothing", "id": "a375-a908-d459-9b01", "hidden": false, "targetId": "b2e2-5e89-eab1-9dce", "type": "rule"},
+          {"name": "Overdose", "id": "3b6d-9d8c-ff98-b6a9", "hidden": false, "targetId": "a980-d561-9f4c-6ba5", "type": "rule"},
+          {"name": "Drugs", "id": "8fdf-da72-3b53-9a5c", "hidden": false, "targetId": "2f15-599e-9500-f84c", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Alcohol",
+            "id": "8b6d-f640-a6a0-846c",
+            "hidden": false,
+            "page": 7,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "5986-7b9a-4bf3-7846",
+            "typeName": "Drug",
+            "characteristics": [
+              {"name": "Effects", "$text": "Add +1 to the Kill Score. Add +1 to any suppression tests.", "typeId": "d23d-ba71-9b81-edc8"},
+              {"name": "Side Effects", "$text": "Subtract -1 from any changing orders tests.", "typeId": "7a19-22b2-f1f5-33f2"},
+              {"name": "Overdose", "$text": "All moves made at -2\". Subtract -1 from all 'to hit' rolls.", "typeId": "f9fa-57a6-0f90-ec31"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sharp",
+        "id": "d98e-d793-72a6-deb7",
+        "collective": true,
+        "hidden": false,
+        "import": true,
+        "page": 7,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 4}],
+        "infoLinks": [
+          {"name": "All or nothing", "id": "318f-85ad-1cf4-7149", "hidden": false, "targetId": "b2e2-5e89-eab1-9dce", "type": "rule"},
+          {"name": "Overdose", "id": "8b4e-f8d8-e2a0-8de5", "hidden": false, "targetId": "a980-d561-9f4c-6ba5", "type": "rule"},
+          {"name": "Drugs", "id": "17f5-6d73-09ee-46df", "hidden": false, "targetId": "2f15-599e-9500-f84c", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Sharp",
+            "id": "730f-ec54-8de7-05a8",
+            "hidden": false,
+            "page": 7,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "5986-7b9a-4bf3-7846",
+            "typeName": "Drug",
+            "characteristics": [
+              {"name": "Effects", "$text": "Doubles the initiative dice roll prior to modifications or orders.", "typeId": "d23d-ba71-9b81-edc8"},
+              {
+                "name": "Side Effects",
+                "$text": "If the user tries to change orders and gets a 3-4 result (Order stays the same) then they are automatically changed to Keep Down orders.",
+                "typeId": "7a19-22b2-f1f5-33f2"
+              },
+              {
+                "name": "Overdose",
+                "$text": "The overdosed user behaves exactly as if they are on Keep Down orders (due to paranoid behaviour).",
+                "typeId": "f9fa-57a6-0f90-ec31"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Light laser",
+        "id": "f109-f158-ede4-0425",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 36}],
+        "profiles": [
+          {
+            "name": "Light laser",
+            "id": "a4cf-3e85-6f11-084f",
+            "hidden": false,
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 12\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "Line of Sight", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "1", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "3 dice", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Smoke grenade",
+        "id": "b1bc-a5ec-0e7f-13b7",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "page": 9,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "constraints": [
+          {
+            "id": "b3fe-1956-34b5-e018",
+            "field": "selections",
+            "includeChildForces": false,
+            "includeChildSelections": false,
+            "percentValue": false,
+            "scope": "parent",
+            "shared": true,
+            "type": "max",
+            "value": 1
+          }
+        ],
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 6}],
+        "infoLinks": [
+          {"name": "Grenade", "id": "2996-aee8-063d-fa31", "hidden": false, "targetId": "8e01-2f4f-2c98-6e75", "type": "rule"},
+          {"name": "Optional", "id": "2730-5cf3-74ad-419e", "hidden": false, "targetId": "5d9e-9c06-0f00-23f4", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Smoke grenade",
+            "id": "754e-2cf7-0700-50ef",
+            "hidden": false,
+            "page": 9,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "N/A", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "12\"", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "1", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "N/A", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ],
+        "rules": [
+          {
+            "name": "Smoke grenade",
+            "id": "f531-97ea-62ea-919f",
+            "description": "Select an aiming point. Apply targeting as normal. A hit lands on target.\n\nA miss allows the opponent to move the marker 3\" in any direction. The grenade cannot be moved further than 12\" from the firer.",
+            "hidden": false,
+            "page": 9,
+            "publicationId": "2409-8f27-pubN67821"
+          },
+          {
+            "name": "Smoke",
+            "id": "6bd6-4f5e-4aa2-c83b",
+            "description": "The smoke effects an area of 3\" around the target point.\n\nSmoke blocks all line of sight.\n\nNight sights or sighting aids cannot see through smoke.\n\nSmoke is non-toxic and can be moved through at half movement rate.\n\nFigures in smoke can target other figures withing the same smoke cloud. However a 6 will be required to hit. If figures are within 2\" of each other all normal targeting modifiers apply. \nHand to hand combat can take place in smoke.",
+            "hidden": false,
+            "page": 9,
+            "publicationId": "2409-8f27-pubN67821"
+          }
+        ]
+      },
+      {
+        "name": "Aux. grenade launcher",
+        "id": "62da-8637-5bb2-f29d",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "page": 5,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 25}],
+        "infoLinks": [{"name": "Optional", "id": "27dd-e7bd-8634-1c0f", "hidden": false, "targetId": "5d9e-9c06-0f00-23f4", "type": "rule"}],
+        "profiles": [
+          {
+            "name": "Aux. grenade launcher",
+            "id": "0242-a771-5012-fb63",
+            "hidden": false,
+            "page": 5,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 10\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "10 - 24\"", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "2", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "5", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mini gun",
+        "id": "5943-e998-7c15-ad1a",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "page": 5,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 40}],
+        "infoLinks": [{"name": "Optional", "id": "4b34-95d1-f685-bb7e", "hidden": false, "targetId": "5d9e-9c06-0f00-23f4", "type": "rule"}],
+        "profiles": [
+          {
+            "name": "Min gun",
+            "id": "9549-66c5-1ee1-a770",
+            "hidden": false,
+            "page": 5,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "9807-bc8d-2755-208c",
+            "typeName": "Weapon - ranged",
+            "characteristics": [
+              {"name": "Short Range", "$text": "0 - 10\"", "typeId": "a909-d7e1-4204-0087"},
+              {"name": "Long Range", "$text": "10 - 30\"", "typeId": "07a0-9b85-7177-349e"},
+              {"name": "Rapid Shots", "$text": "4 / 8", "typeId": "7441-71b3-8347-a742"},
+              {"name": "Damage", "$text": "3", "typeId": "e65c-8ba8-39a4-adf0"}
+            ]
+          }
+        ],
+        "rules": [
+          {
+            "name": "Min gun",
+            "id": "afa6-61e1-183b-921f",
+            "description": "Mini guns can only be used when the firer has 'shoot' orders.\n\nMin guns can be fired in long and short bursts. If the shooter fires a short burst,  s*he can fire four rapid shots. But if the shooter fires a long burst then s*he may fire eight rapid shots. \n\nA min gun may only be used to fire a long burst if the shooter has not moved this turn. \n\nA short burst uses one ammunition counter and a long burst uses two ammunition counters.\n\nA mini gun starts the game with a total of 6 ammunition counters.",
+            "hidden": false
+          }
+        ]
+      },
+      {
+        "name": "Power glove",
+        "id": "4187-f11b-aa43-c1e4",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "page": 5,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 5}],
+        "infoLinks": [{"name": "Optional", "id": "75f7-5541-f053-0102", "hidden": false, "targetId": "5d9e-9c06-0f00-23f4", "type": "rule"}],
+        "profiles": [
+          {
+            "name": "Power glove",
+            "id": "9422-f154-b145-5492",
+            "hidden": false,
+            "page": 5,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "a6bc-703b-2cb3-74a4",
+            "typeName": "Weapon - hand to hand",
+            "characteristics": [{"name": "Kill Score Bonus", "$text": "1 dice per glove", "typeId": "812c-9228-6166-16d5"}]
+          }
+        ]
+      },
+      {
+        "name": "Power armor trooper",
+        "id": "d991-61a5-abb3-2322",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "page": 4,
+        "publicationId": "2409-8f27-pubN67821",
+        "type": "upgrade",
+        "categoryLinks": [{"name": "New CategoryLink", "id": "192d-c67a-ffbb-b740", "hidden": false, "primary": true, "targetId": "ee39-e807-e80b-f42d"}],
+        "constraints": [
+          {
+            "id": "13a8-cbac-c293-ed87",
+            "field": "selections",
+            "includeChildForces": false,
+            "includeChildSelections": false,
+            "percentValue": false,
+            "scope": "parent",
+            "shared": true,
+            "type": "min",
+            "value": 2
+          }
+        ],
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 100}],
+        "entryLinks": [
+          {
+            "name": "Power armor gear",
+            "id": "ef2b-a517-068b-1fc2",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "page": 5,
+            "publicationId": "2409-8f27-pubN67821",
+            "targetId": "f70f-503f-c37e-23ac",
+            "type": "selectionEntryGroup"
+          }
+        ],
+        "infoLinks": [
+          {"name": "Night sight", "id": "62d7-fff7-d9bb-ce8f", "hidden": false, "targetId": "dea8-5779-70c1-bd1c", "type": "rule"},
+          {"name": "Sighting aid", "id": "9b20-a7ca-7f5f-3724", "hidden": false, "targetId": "32ef-b224-d38c-7243", "type": "rule"}
+        ],
+        "profiles": [
+          {
+            "name": "Power armor hand to hand",
+            "id": "1359-1f25-f114-d929",
+            "hidden": false,
+            "page": 5,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "97ae-f686-f0ed-67d0",
+            "typeName": "Hand to hand combat dice",
+            "characteristics": [{"name": "Combat Dice", "$text": "2 dice", "typeId": "9752-cb13-33a0-2b27"}]
+          },
+          {
+            "name": "Ranged damage vs. power armor",
+            "id": "0fcd-660f-c7b3-ac08",
+            "hidden": false,
+            "page": 4,
+            "publicationId": "2409-8f27-pubN67821",
+            "typeId": "20af-36f4-e61d-1192",
+            "typeName": "Ranged damage",
+            "characteristics": [{"name": "Killed", "$text": "16", "typeId": "42f9-9585-f0b6-041a"}, {"name": "Suppressed", "$text": "10", "typeId": "c070-6d6c-6abc-a422"}]
+          }
+        ],
+        "rules": [
+          {
+            "name": "Power armor",
+            "id": "8086-76ca-b589-d869",
+            "description": "Power armored troopers operate in squads of at least two.\n\nA power armor has the following equipment inbuilt: Sighting aid, Night sight.\n\nA power armor trooper can only be given the following orders: Shoot, Assault, Stay Sharp.\n\nAll Movement rates are at -2\", difficult terrain applies, and movement at night is not penalized.\n\nAll power armors have a single-shot smoke grenade launcher inbuilt. A power armor trooper may shoot all of his weapons as often as his orders allow simultaneously.\n\nAs looser of a hand to hand combat, a power armor substracts 6 from the Kill Score before checking for kill / supress.",
+            "hidden": false,
+            "page": 4,
+            "publicationId": "2409-8f27-pubN67821"
+          }
+        ]
+      },
+      {
+        "name": "Dagger",
+        "id": "714b-7bd9-93e6-86a0",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "costs": [{"name": "Points", "typeId": "5c85-6969-5b93-e18d", "value": 1}],
+        "infoLinks": [
+          {"name": "Light", "id": "b029-1367-3cc5-f712", "hidden": false, "targetId": "6d44-42d4-d364-1349", "type": "profile"},
+          {"name": "Two weapon wielder", "id": "0a32-9eb6-5e69-8c18", "hidden": false, "targetId": "18de-6ce3-b833-0e97", "type": "rule"}
+        ]
+      }
+    ],
+    "sharedSelectionEntryGroups": [
+      {
+        "name": "1 Armor",
+        "id": "9490-e4be-1d60-0a47",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "entryLinks": [
+          {
+            "name": "Armor - heavy",
+            "id": "9133-bd66-10ec-de4c",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "d9dd-479a-c8d2-57e5",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "572a-81b7-f421-eccd",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "1.1 Armor - light",
+            "id": "22ca-0e00-40e7-867b",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "02b5-6900-34e4-ade0",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "1be2-c420-7826-6d83",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Armor - medium",
+            "id": "1251-6966-bc94-734d",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "6c84-7934-b009-837e",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "90d6-112b-4300-a290",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "2 Ranged weapons",
+        "id": "13dd-cfdf-d082-66be",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "entryLinks": [
+          {
+            "name": "Assault Rifle",
+            "id": "7a20-e00d-2fb6-074d",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "719c-801b-dec1-a5c5",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "29c4-c89f-c27d-f30b",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Assault Rifle - military",
+            "id": "85d3-256a-8612-fe0b",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "9e23-9648-3c45-86ea",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "c26a-60d6-9f6a-521d",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Handgun",
+            "id": "b07f-31cf-0788-98e9",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "2953-3c22-a307-02e4",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "52ae-ab4c-7509-46b9",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Handgun - heavy",
+            "id": "3d51-f9d0-1613-3f77",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "85b5-da83-a65c-9138",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "ce2b-f8d5-8dc4-c543",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Light assault cannon",
+            "id": "af84-8268-d8d3-6576",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "f10c-3d79-3d75-e4ae",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "5cad-454e-b66e-bdf7",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Machine pistol",
+            "id": "c98f-97c9-81f6-2c3b",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "50d9-9b99-9988-dab0",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "f7d5-9073-7fe5-3f74",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Scatter gun",
+            "id": "9838-207f-6051-da48",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "9dda-a228-c485-cd2b",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "8299-d5ef-575f-ce0a",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Shotgun",
+            "id": "d3fe-f3c4-5477-0d37",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "8f5c-a0f1-3e40-a5c4",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "729e-cd39-3dac-87e3",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Shotgun - auto",
+            "id": "ad55-9bb5-cc43-7563",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "015b-4e7c-4be9-ea1a",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "2eb9-3663-36e9-e75b",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Crossbow",
+            "id": "eb14-201b-9c71-8fb5",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "98d0-c95b-b0ab-cbd8",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "1e50-1f7a-7bae-0551",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Molotov Cocktail",
+            "id": "8a3e-83d6-22a7-10ce",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "5f2b-0e5e-f482-c454",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "4bef-ab19-9c6b-d718",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Light laser",
+            "id": "5954-fdb8-8224-e569",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "f109-f158-ede4-0425",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "5192-f7a3-5433-8c43",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "4 Hand to hand weapons",
+        "id": "9fb9-eee5-9e70-dbe5",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "entryLinks": [
+          {
+            "name": "Chain",
+            "id": "aa80-65ea-352b-3e4c",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "025b-8b0b-2812-a1a1",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "dec0-7711-1161-46ef",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "name": "Dagger",
+            "id": "1ed4-a892-6cbf-f487",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "714b-7bd9-93e6-86a0",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "e1f9-42c0-c1af-c7dc",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "name": "Razor claws",
+            "id": "c8ae-4df1-fcd5-8c22",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "3a7f-e92e-dfcf-66c1",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "d581-2508-03bf-fc9d",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "name": "Sword",
+            "id": "cfa3-ebdb-330d-bb9e",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "4eaf-555f-1469-e7a8",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "9b8f-c842-f214-8a90",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "name": "4 - Pick",
+            "id": "224b-cf6f-89cc-b74b",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "fbe3-cf1e-9dcb-366f",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "cdf5-fc51-41d7-1523",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "name": "Stunstick",
+            "id": "70b2-74e6-219e-39ff",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "f0a5-e2b2-9a6b-3050",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "a9bc-4ff6-a9ac-edf4",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cyborg gear",
+        "id": "9044-59b4-011f-4330",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "entryLinks": [
+          {
+            "name": "Handgun",
+            "id": "7117-554d-41f7-2f5a",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "2953-3c22-a307-02e4",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "6b27-aa9e-dd71-2d86",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Handgun - heavy",
+            "id": "0ca6-f269-21ae-a7af",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "85b5-da83-a65c-9138",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "0611-b1be-c696-3360",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Machine pistol",
+            "id": "4c02-f2bf-d2d1-89b4",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "50d9-9b99-9988-dab0",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "4cdd-6305-7cbe-094f",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Shotgun - auto",
+            "id": "abb3-9fd0-d89a-84fe",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "015b-4e7c-4be9-ea1a",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "5501-76e7-fa55-9e2b",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Shotgun",
+            "id": "5637-a148-38ca-d36b",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "8f5c-a0f1-3e40-a5c4",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "9fdd-db27-0c59-cf5c",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "5 Gear",
+        "id": "01bc-b373-fa2f-8a24",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "entryLinks": [
+          {
+            "name": "Night sight",
+            "id": "6aea-c789-e856-cf16",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "120a-b556-2697-f699",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "b21c-bde0-cd60-5d0b",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "name": "Sighting aid",
+            "id": "d5a2-7b42-b35c-43e4",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "02c0-abd1-d54b-92ed",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "684f-05b4-c784-a4e7",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "6 Drugs",
+        "id": "69e7-583a-226b-cb8b",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "entryLinks": [
+          {
+            "name": "Speed",
+            "id": "e393-0652-2f25-59b3",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "1c50-5853-4515-5c1d",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Sharp",
+            "id": "40b5-01c4-d75e-774b",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "d98e-d793-72a6-deb7",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Haywire",
+            "id": "9ff7-38a2-c6f9-0053",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "5699-5913-aaec-24e3",
+            "type": "selectionEntry"
+          },
+          {"name": "Dove", "id": "0fb7-accd-95ff-7d0e", "collective": false, "hidden": false, "import": true, "targetId": "3caa-fb66-5349-2e3b", "type": "selectionEntry"},
+          {
+            "name": "Alcohol",
+            "id": "86af-63ff-98a1-d398",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "7382-5c7e-ab63-d97b",
+            "type": "selectionEntry"
+          }
+        ]
+      },
+      {
+        "name": "Power armor gear",
+        "id": "f70f-503f-c37e-23ac",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "entryLinks": [
+          {
+            "name": "2 - Aux. grenade launcher",
+            "id": "0673-e047-6aff-d01a",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "62da-8637-5bb2-f29d",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "5367-e6fd-1dea-925c",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "name": "3 - Mini gun",
+            "id": "f644-5eec-31bc-a147",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "5943-e998-7c15-ad1a",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "a709-7b3d-b723-1227",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "name": "4 - Power glove",
+            "id": "99bd-2628-0572-b8e2",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "4187-f11b-aa43-c1e4",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "8fd3-ffc8-b5e6-75ed",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "name": "3 - Smoke grenade",
+            "id": "5d5a-3da7-bc68-f302",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "b1bc-a5ec-0e7f-13b7",
+            "type": "selectionEntry",
+            "constraints": [
+              {
+                "id": "9803-cc04-6a27-87e8",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "min",
+                "value": 1
+              },
+              {
+                "id": "d492-4e3e-d276-33d2",
+                "field": "selections",
+                "includeChildForces": false,
+                "includeChildSelections": false,
+                "percentValue": false,
+                "scope": "parent",
+                "shared": true,
+                "type": "max",
+                "value": 1
+              }
+            ],
+            "modifiers": [{"field": "5c85-6969-5b93-e18d", "type": "set", "value": 0}]
+          }
+        ]
+      },
+      {
+        "name": "Optional",
+        "id": "c03c-296b-ec01-3aff",
+        "collective": false,
+        "hidden": false,
+        "import": true,
+        "publicationId": "2409-8f27-pubN67821",
+        "entryLinks": [
+          {
+            "name": "Alcohol",
+            "id": "9df1-e4f4-f13e-daa8",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "7382-5c7e-ab63-d97b",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Armor - heavy",
+            "id": "5960-ddd3-7294-9527",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "d9dd-479a-c8d2-57e5",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Armor - medium",
+            "id": "064f-a2e6-f83c-55c6",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "6c84-7934-b009-837e",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Aux. grenade launcher",
+            "id": "2735-3d37-7d5b-7f5e",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "62da-8637-5bb2-f29d",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Crossbow",
+            "id": "941b-4a98-c328-350d",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "98d0-c95b-b0ab-cbd8",
+            "type": "selectionEntry"
+          },
+          {"name": "Dove", "id": "8462-33f3-40df-d74e", "collective": false, "hidden": false, "import": true, "targetId": "3caa-fb66-5349-2e3b", "type": "selectionEntry"},
+          {
+            "name": "Haywire",
+            "id": "d1d4-fd32-5dcc-273d",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "5699-5913-aaec-24e3",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Min gun",
+            "id": "092c-a406-a437-9256",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "5943-e998-7c15-ad1a",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Molotov cocktail",
+            "id": "cf8a-e94e-45e4-f65f",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "5f2b-0e5e-f482-c454",
+            "type": "selectionEntry"
+          },
+          {"name": "Pick", "id": "c3ae-4f20-5d0d-1306", "collective": false, "hidden": false, "import": true, "targetId": "fbe3-cf1e-9dcb-366f", "type": "selectionEntry"},
+          {
+            "name": "Power armor",
+            "id": "a736-f94d-53dd-aba6",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "d991-61a5-abb3-2322",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Power glove",
+            "id": "05cc-7886-508c-93a1",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "4187-f11b-aa43-c1e4",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Smoke grenade",
+            "id": "20d8-ae6c-399c-f973",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "b1bc-a5ec-0e7f-13b7",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Stunstick",
+            "id": "e377-5406-2c7f-eb9c",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "f0a5-e2b2-9a6b-3050",
+            "type": "selectionEntry"
+          },
+          {
+            "name": "Speed",
+            "id": "76f2-f9ae-2dc0-65f9",
+            "collective": false,
+            "hidden": false,
+            "import": true,
+            "targetId": "1c50-5853-4515-5c1d",
+            "type": "selectionEntry"
+          }
+        ]
+      }
+    ]
+  }
+}
